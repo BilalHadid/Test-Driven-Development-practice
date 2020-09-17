@@ -2,10 +2,11 @@
   flex: 1 1 auto;
   text-align: center;
   margin: 0px 20px;
-  border: var(--button-border);
-  font-size: var(--button-text-size);
+
+  display: inline;
 }
 
 .button-container:hover {
   cursor: pointer;
+  color: blue;
 }
