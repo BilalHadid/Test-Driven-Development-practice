@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Timer.css";
-import TimerButton from "../TimerButton/TimerButton";
+// import TimerButton from "../TimerButton/TimerButton";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import PauseIcon from "@material-ui/icons/Pause";
 
 class Timer extends Component {
   constructor(props: any) {
@@ -64,8 +66,20 @@ class Timer extends Component {
 
     return (
       <div className="timer-container">
-        <div className="time-display">
-          {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+        <h1 style={{ color: "#8a909c" }}>Timer App</h1>
+        <div
+          style={{
+            border: "3px solid #d3cadb",
+            width: "90px",
+            height: "70px",
+            borderRadius: "100%",
+            padding: "10%",
+            marginLeft: "35%",
+          }}
+        >
+          <h1 className="headTime">
+            {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+          </h1>
         </div>
         <div className="timer-button-container">
           <button className="start-timer" onClick={this.startTimer}>
@@ -76,6 +90,11 @@ class Timer extends Component {
           </button>
           <button className="reset-timer" onClick={this.resetTimer}>
             {"Reset"}
+          </button>
+        </div>
+        <div>
+          <button className="resume-timer" onClick={this.startTimer}>
+            {!this.state.isOn ? <PlayArrowIcon /> : <PauseIcon />}
           </button>
         </div>
       </div>

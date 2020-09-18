@@ -8,7 +8,7 @@ describe("Timer", () => {
   beforeEach(() => (container = shallow(<Timer />)));
 
   it("should render <div />", () => {
-    expect(container.find("div").length).toEqual(3);
+    expect(container.find("div").length).toEqual(4);
   });
 });
 

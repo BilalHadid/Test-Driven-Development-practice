@@ -1,10 +1,22 @@
 import React from "react";
 import "./App.css";
 import Timer from "../timer/Timer";
+import firebase from "../../firebase";
 
-const App = () => (
-  <div className="container">
-    <Timer />
-  </div>
-);
+const App = () => {
+  const messaging = firebase.messaging();
+  messaging
+    .requestPermission()
+    .then(() => {
+      return messaging.getToken();
+    })
+    .then((token) => {
+      console.log("token", token);
+    });
+  return (
+    <div className="container">
+      <Timer />
+    </div>
+  );
+};
 export default App;
