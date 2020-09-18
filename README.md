@@ -1,5 +1,10 @@
-##FOR LIVE REVIEW:
+## FOR LIVE REVIEW Surge:
+
 [click here](https://timer-app-bilal.surge.sh)
+
+## for live review firebase:
+
+[click here](https://timer-app-18620.web.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
