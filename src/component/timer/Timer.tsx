@@ -23,11 +23,13 @@ class Timer extends Component {
     isOn: false,
     timer: "",
   };
+
   startTimer() {
     if (this.state.isOn === true) {
       return;
     }
-    this.state.timer = setInterval(() => {
+
+    let Interval = setInterval(() => {
       const { seconds, minutes } = this.state;
       if (seconds > 0) {
         this.setState(({ seconds }: any) => ({
@@ -36,7 +38,7 @@ class Timer extends Component {
       }
       if (seconds === 0) {
         if (minutes === 0) {
-          clearInterval(this.state.timer);
+          clearInterval(Interval);
         } else {
           this.setState(({ minutes }: any) => ({
             minutes: minutes - 1,
@@ -46,6 +48,7 @@ class Timer extends Component {
       }
     }, 1000);
     this.setState({ isOn: true });
+    this.setState({ timer: Interval });
   }
 
   stopTimer() {
