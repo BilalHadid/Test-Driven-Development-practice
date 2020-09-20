@@ -11,7 +11,7 @@ const App = () => {
       return messaging.getToken();
     })
     .then((token) => {
-      console.log("token", token);
+      console.log("My token is", token);
     });
   return (
     <div className="container">
